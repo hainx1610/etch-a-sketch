@@ -1,0 +1,14 @@
+
+
+.grid {
+  display: flex;
+  flex-flow: wrap;
+  width: 500px;
+  height: 500px;
+}
+.square {
+    background: #f6f1f1;
+   
+    border: dashed rgb(221, 217, 217) 1px;
+    box-sizing: border-box;
+}
