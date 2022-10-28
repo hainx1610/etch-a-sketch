@@ -12,3 +12,7 @@
     border: dashed rgb(221, 217, 217) 1px;
     box-sizing: border-box;
 }
+
+.square.mousedover {
+    background: rgb(57, 57, 94);
+}
