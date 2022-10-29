@@ -20,3 +20,19 @@ function createSquare(n) {
 }
 
 createSquare(16);
+
+function addChangeGrid(button) {
+    button.addEventListener("click", e => {
+        let inputValue = +prompt("Please enter a desired width/height");
+        if (inputValue > 0 && inputValue < 100 && inputValue) {
+            grid.innerHTML = "";
+            createSquare(inputValue);
+        } else {
+            alert("Please choose a number between 0 and 100");
+        }
+    })
+}
+addChangeGrid(document.getElementById("change"));
+
+
+
