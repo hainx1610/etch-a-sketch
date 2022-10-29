@@ -1,10 +1,47 @@
 const grid = document.querySelector(".grid");
 const gridHeight = Math.round(parseFloat(getComputedStyle(grid).height));
 const gridWidth = Math.round(parseFloat(getComputedStyle(grid).width));
+let mode = "regular";
 
-const addHover = element => {
-    element.addEventListener("mouseover", e => {
-        element.classList.add("mousedover");
+function colorRandomly(element) {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    element.style.background = bgColor;
+}
+
+document.getElementById("change").addEventListener("click", e => {
+    let inputValue = +prompt("Please enter a desired width/height");
+    if (inputValue > 0 && inputValue < 100 && inputValue) {
+        grid.innerHTML = "";
+        createSquare(inputValue);
+    } else {
+        alert("Please choose a number between 0 and 100");
+    }
+})
+
+document.getElementById("regular").addEventListener("click", e => {
+    mode = "regular";
+})
+
+document.getElementById("rainbow").addEventListener("click", e => {
+    mode = "rainbow";
+})
+
+document.getElementById("reset").addEventListener("click", e => {
+    mode = "regular";
+    grid.innerHTML = "";
+    createSquare(16);
+})
+
+function addHover(element) {
+    element.addEventListener("mouseenter", e => {
+        if (mode === "regular") {
+            element.classList.add("mouseenter");
+        } else if (mode === "rainbow") {
+            colorRandomly(element);
+        }
     })
 }
 
@@ -21,18 +58,13 @@ function createSquare(n) {
 
 createSquare(16);
 
-function addChangeGrid(button) {
-    button.addEventListener("click", e => {
-        let inputValue = +prompt("Please enter a desired width/height");
-        if (inputValue > 0 && inputValue < 100 && inputValue) {
-            grid.innerHTML = "";
-            createSquare(inputValue);
-        } else {
-            alert("Please choose a number between 0 and 100");
-        }
-    })
-}
-addChangeGrid(document.getElementById("change"));
+
+
+
+
+
+
+
 
 
 

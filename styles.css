@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .grid {
   display: flex;
   flex-flow: wrap;
@@ -16,6 +22,6 @@
     box-sizing: border-box;
 }
 
-.square.mousedover {
+.square.mouseenter {
     background: rgb(57, 57, 94);
 }
