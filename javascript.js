@@ -38,7 +38,7 @@ document.getElementById("reset").addEventListener("click", e => {
 function addHover(element) {
     element.addEventListener("mouseenter", e => {
         if (mode === "regular") {
-            element.classList.add("mouseenter");
+            element.style.background = "black";
         } else if (mode === "rainbow") {
             colorRandomly(element);
         }
